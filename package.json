@@ -1,0 +1,25 @@
+{
+	"name": "demo-reverse-engineering",
+	"version": "1.0.0",
+	"description": "This is a demo application that emulates weaknesses in some applications to learn how to find them and use them",
+	"scripts": {
+		"frontend:dev": "cd frontend && npm run dev",
+		"frontend:prod": "cd frontend && npm run build",
+		"backend:dev": "cd backend && npm run dev",
+		"backend:prod": "cd backend && npm run start",
+		"dev": "concurrently --names \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run backend:dev\" \"npm run frontend:dev\"",
+		"prod": "npm run frontend:prod && npm run backend:prod",
+		"docker:up": "docker compose up -d",
+		"docker:down": "docker compose down",
+		"docker:rebuild": "docker compose down && docker compose build --no-cache && docker compose up -d"
+	},
+	"author": "Enrico",
+	"license": "MIT",
+	"workspaces": [
+		"backend",
+		"frontend"
+	],
+	"devDependencies": {
+		"concurrently": "^9.1.2"
+	}
+}

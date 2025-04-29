@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js -p"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "pdf-lib": "^1.17.1"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "md5": "^2.3.0",
+    "msgpack-lite": "^0.1.26",
+    "yargs": "^17.7.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "prepareBooks.js",
+      "sessions.json"
+    ]
+  }
+}
