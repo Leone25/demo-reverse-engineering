@@ -1,10 +1,9 @@
 <script setup>
-import { toRaw } from 'vue';
 import { RouterLink } from 'vue-router';
 import Spinner from '@/components/Spinner.vue';
 import { VuePDF, usePDF } from '@tato30/vue-pdf';
+import msgpack from 'msgpack-lite/dist/msgpack.min.js';
 import aesjs from 'aes-js';
-import msgpack from 'msgpack-lite';
 import md5 from 'md5';
 </script>
 <script>
@@ -21,10 +20,10 @@ export default {
             width: 100,
             height: 100,
             preloaded: {},
-            key: aesjs.utils.hex.toBytes("77afca0860c48cd56f4a4bbec17e7864"),
+            key: [119,175,202,8,96,196,140,213,111,74,75,190,193,126,120,100],
         }
     },
-    mounted() {
+    async mounted() {
         this.ro = new ResizeObserver(this.onResize);
         this.ro.observe(this.$refs.pdf);
         this.width = this.$refs.pdf.offsetWidth;

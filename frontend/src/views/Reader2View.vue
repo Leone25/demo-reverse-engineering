@@ -8,7 +8,7 @@ export default {
     props: ['id'],
     data() {
         let pdf = usePDF({
-            url: '/api/v1/books/' + this.id + '.pdf',
+            url: '/api/v2/books/' + this.id + '.pdf',
             withCredentials: true,
             disableRange: true,
         });
