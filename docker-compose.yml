@@ -1,0 +1,14 @@
+
+
+services:
+  server:
+    build:
+      context: "."
+      dockerfile: "./Dockerfile"
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /usr/src/app/backend
+    ports:
+      - 8888:8888
